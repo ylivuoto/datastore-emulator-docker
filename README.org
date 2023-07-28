@@ -6,29 +6,29 @@ Koska tätä järjestelmäkuvaa ei voi ladata Docker Hubista, se täytyy
 pystyttää paikallisesti. Seuraavien komentojen käyttö edellyttää
 Docker Enginen asennusta, joka tulee yleensä Docker Desktopin
 mukana. Muokkaa ~Dockerfile~ ja ~docker-compose.yml~ tarpeidesi mukaiseksi
-tai voit kokeilla suoraan näillä. *HUOM.* muuta kuitenkin IP osoite
-vastaamaan omaasi docker-compose.yml tiedostosta.
+tai voit kokeilla suoraan näillä.
 
 ** Käyttö / usage
 #+begin_src
   docker build -t google-datastore .
 #+end_src
 
+Jos löydät Docker Hubista sellaisen järjestelmäkuvan, missä
+datastorelle ei ole annettu ~--no-store-on-disk~ flagia, voit käyttää
+sitä. Tämän tietovaraston Dockerfile on muokattu
+https://bitbucket.org/egym-com/datastore-emulator/src/master/
+Dockerfilestä.
+
 Seuraavaksi suoritetaan docker-compose.yml file tausta-ajo tilassa.
 #+begin_src
   docker compose up -d
 #+end_src
 
-Jos löydät Docker Hubista sellaisen järjestelmäkuvan, missä
-datastorelle ei ole annettu ~--no-store-on-disk~ flagia, voit käyttää
-sitä. Tämä Dockerfile on muokattu
-https://bitbucket.org/egym-com/datastore-emulator/src/master/
-Dockerfilestä.
-
-Jos tarvitsee muuttaa index.yaml tiedostoa enemmän, käytä volumea esim.
+Jos tarvitsee käyttää ~index.yaml~ tiedoston määrityksiä, sen voi
+luoda kansioon ~index~ ja käyttää volumea esim.
 #+begin_src
   volumes:
-    - ./:/opt/datastore-index
+    - ./index:/opt/datastore-index
 #+end_src
 
 *HUOM.* Muista asettaa ympäristömuuttujat myös sovelluksesi ajoympäristöön.
