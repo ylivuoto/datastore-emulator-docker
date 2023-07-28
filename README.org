@@ -9,6 +9,7 @@ mukana. Muokkaa ~Dockerfile~ ja ~docker-compose.yml~ tarpeidesi mukaiseksi
 tai voit kokeilla suoraan näillä. HUOM. muuta kuitenkin IP osoite
 vastaamaan omaasi docker-file.yml tiedostosta.
 
+** Käyttö / usage
 #+begin_src
   docker build -t google-datastore .
 #+end_src
@@ -30,6 +31,7 @@ Jos tarvitsee muuttaa index.yaml tiedostoa enemmän, käytä volumea esim.
     - ./:/opt/datastore-index
 #+end_src
 
+** Explanation in English
 Since this system image cannot be downloaded from Docker Hub as such,
 it needs to be set up locally. The use of the  commands above
 requires Docker Engine installation, which usually comes with Docker
