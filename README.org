@@ -1,0 +1,40 @@
+* Google Datastore Emulator
+
+English below.
+
+Koska tätä järjestelmäkuvaa ei voi ladata Docker Hubista tallaisenaa, se täytyy
+pystyttää paikallisesti. Seuraavien komentojen käyttö edellyttää
+Docker Enginen asennusta, joka tulee yleensä Docker Desktopin
+mukana. Muokkaa Dockerfile ja docker-compose.yml tarpeidesi mukaiseksi
+tai voit kokeilla suoraan näillä. HUOM. muuta kuitenkin IP osoite
+vastaamaan omaasi docker-file.yml tiedostosta.
+
+#+begin_src
+  docker build -t google-datastore .
+#+end_src
+
+Seuraavaksi suoritetaan docker-compose.yml file tausta-ajo tilassa.
+#+begin_src
+  docker compose up -d
+#+end_src
+
+Jos löydät Docker Hubista sellaisen järjestelmäkuvan, missä
+datastorelle ei ole annettu --no-store-on-disk flagia, voit käyttää
+sitä. Tämä Dockerfile on muokattu
+https://bitbucket.org/egym-com/datastore-emulator/src/master/
+Dockerfilestä.
+
+Jos tarvitsee muuttaa index.yaml tiedostoa enemmän, käytä volumea esim.
+#+begin_src
+  volumes:
+    - ./:/opt/datastore-index
+#+end_src
+
+Since this system image cannot be downloaded from Docker Hub as such,
+it needs to be set up locally. The use of the  commands above
+requires Docker Engine installation, which usually comes with Docker
+Desktop. Modify the Dockerfile and docker-compose.yml to suit your
+needs, or you can try using them directly. NOTE: However, remember to
+change the IP address to match your own in the docker-file.yml file.
+
+For more information please refer to the [datastore emulator documentation](https://cloud.google.com/datastore/docs/tools/datastore-emulator).

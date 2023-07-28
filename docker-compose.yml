@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  datastore-emulator:
+    image: google-datastore:latest
+
+    environment:
+      DATASTORE_PROJECT_ID: ties4080vt4
+
+    ports:
+      - "8282:8282"
+
+    # If you want to store the data locally, there is example below
+    # volumes:
+    #   - ./db:/datastore
+      
+  datastore_viewer:
+    image: quay.io/gumo/datastore-viewer
+
+    # DATASTORE_EMULATOR_HOST here needs to be on your host machines IP
+    environment:
+      DATASTORE_VIEWER_HOST: 0.0.0.0
+      DATASTORE_VIEWER_PORT: 18081
+      GOOGLE_CLOUD_PROJECT: ties4080vt4
+      DATASTORE_EMULATOR_HOST: 192.168.1.81:8282
+  
+    ports:
+      - "18081:18081"
+
+    depends_on:
+      - datastore-emulator
