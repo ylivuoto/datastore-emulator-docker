@@ -7,7 +7,7 @@ pystyttää paikallisesti. Seuraavien komentojen käyttö edellyttää
 Docker Enginen asennusta, joka tulee yleensä Docker Desktopin
 mukana. Muokkaa ~Dockerfile~ ja ~docker-compose.yml~ tarpeidesi mukaiseksi
 tai voit kokeilla suoraan näillä. *HUOM*. muuta kuitenkin IP osoite
-vastaamaan omaasi docker-file.yml tiedostosta.
+vastaamaan omaasi docker-compose.yml tiedostosta.
 
 ** Käyttö / usage
 #+begin_src
