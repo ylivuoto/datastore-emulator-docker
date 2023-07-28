@@ -2,11 +2,11 @@
 
 English below.
 
-Koska tätä järjestelmäkuvaa ei voi ladata Docker Hubista tallaisenaa, se täytyy
+Koska tätä järjestelmäkuvaa ei voi ladata Docker Hubista, se täytyy
 pystyttää paikallisesti. Seuraavien komentojen käyttö edellyttää
 Docker Enginen asennusta, joka tulee yleensä Docker Desktopin
 mukana. Muokkaa ~Dockerfile~ ja ~docker-compose.yml~ tarpeidesi mukaiseksi
-tai voit kokeilla suoraan näillä. HUOM. muuta kuitenkin IP osoite
+tai voit kokeilla suoraan näillä. *HUOM*. muuta kuitenkin IP osoite
 vastaamaan omaasi docker-file.yml tiedostosta.
 
 ** Käyttö / usage
