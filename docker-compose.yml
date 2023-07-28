@@ -17,7 +17,6 @@ services:
   datastore_viewer:
     image: quay.io/gumo/datastore-viewer
 
-    # DATASTORE_EMULATOR_HOST here needs to be on your host machines IP
     environment:
       DATASTORE_VIEWER_HOST: 0.0.0.0
       DATASTORE_VIEWER_PORT: 18081
