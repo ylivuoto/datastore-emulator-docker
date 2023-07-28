@@ -1,4 +1,4 @@
-* Google Datastore Emulator
+* Google Datastore Emulator + Viewer
 
 English below.
 
