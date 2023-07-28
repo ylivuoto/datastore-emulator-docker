@@ -6,7 +6,7 @@ Koska tätä järjestelmäkuvaa ei voi ladata Docker Hubista, se täytyy
 pystyttää paikallisesti. Seuraavien komentojen käyttö edellyttää
 Docker Enginen asennusta, joka tulee yleensä Docker Desktopin
 mukana. Muokkaa ~Dockerfile~ ja ~docker-compose.yml~ tarpeidesi mukaiseksi
-tai voit kokeilla suoraan näillä. *HUOM*. muuta kuitenkin IP osoite
+tai voit kokeilla suoraan näillä. *HUOM.* muuta kuitenkin IP osoite
 vastaamaan omaasi docker-compose.yml tiedostosta.
 
 ** Käyttö / usage
@@ -31,6 +31,8 @@ Jos tarvitsee muuttaa index.yaml tiedostoa enemmän, käytä volumea esim.
     - ./:/opt/datastore-index
 #+end_src
 
+*HUOM.* Muista asettaa ympäristömuuttujat myös sovelluksesi ajoympäristöön.
+
 ** Explanation in English
 Since this system image cannot be downloaded from Docker Hub as such,
 it needs to be set up locally. The use of the  commands above
@@ -38,5 +40,8 @@ requires Docker Engine installation, which usually comes with Docker
 Desktop. Modify the Dockerfile and docker-compose.yml to suit your
 needs, or you can try using them directly. NOTE: However, remember to
 change the IP address to match your own in the docker-file.yml file.
+
+*NOTE.* Please don't forget to set environment variables to your app
+running environment.
 
 For more information please refer to the [datastore emulator documentation](https://cloud.google.com/datastore/docs/tools/datastore-emulator).
